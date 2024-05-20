@@ -23,11 +23,10 @@ export default function Home() {
     const [scrollLocked, setScrollLocked] = useState(false);
     const [scrolled, setScrolled] = useState(false)
     const [ref, inView] = useInView({ once: true });
-    const media1920 = width > 1440
-    const media1440 = width <= 1440 && width >1024
-    const media1024 = width <= 1024 && width > 768
-    const media480 = width <= 480
-    console.log(media1440)
+    const media1920 = !!width && width > 1440
+    const media1440 = !!width && width <= 1440 && width >1024
+    const media1024 = !!width && width <= 1024 && width > 768
+    const media480 = !!width && width <= 480
     const titleSize = () => {
         if (media1920) {
             return scrolled? '120px': '128px'
@@ -109,7 +108,6 @@ export default function Home() {
             setScrolled(true);
         } else {
             const deltaY = event.deltaY;
-            console.log(deltaY)
                 if (deltaY > 0) {
                     scroller.scrollTo('section2', {
                         duration: 500,
