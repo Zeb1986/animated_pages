@@ -41,19 +41,19 @@ export default function Home() {
 
     const firstBlockAnimation = useSpring({
         from: { transform: 'translateY(400%)' },
-        to: { transform: 'translateY(0%)' },
+        to: { transform: scrolled? 'translateY(0%)': 'translateY(400%)' },
         config: { tension: 50, friction: 10, mass: 1 },
     });
 
     const secondBlockAnimation = useSpring({
         from: { transform: 'translateY(400%)' },
-        to: { transform: 'translateY(0%)' },
+        to: { transform: scrolled? 'translateY(0%)': 'translateY(400%)' },
         config: { tension: 50, friction: 12, mass: 2 },
     });
 
     const thirdBlockAnimation = useSpring({
         from: { transform: 'translateY(400%)' },
-        to: { transform: 'translateY(0%)' },
+        to: { transform: scrolled? 'translateY(0%)': 'translateY(400%)' },
         config: { tension: 50, friction: 14, mass: 3 },
     });
     const planerAnimation = useSpring({
