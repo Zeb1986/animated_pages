@@ -1,0 +1,196 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  position: relative;
+}
+.section2 {
+  height: 100vh!important;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.section2images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.planetContainer {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  z-index: 0;
+}
+.lowCloud {
+  position: fixed;
+  bottom: -100px;
+  left: 0px;
+  z-index: 0;
+  transform: rotateY(180deg);
+}
+.upCloud {
+  position: fixed;
+  top: 0;
+  left: 500px;
+  z-index: 0;
+}
+
+.header {
+  padding-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 160px;
+  z-index: 1;
+}
+.titleWrapper {
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 24px;
+  margin-bottom: 80px;
+  z-index: 1;
+}
+.title {
+  max-width: 100%;
+  font-family: Clash Grotesk;
+  font-size: 128px;
+  font-weight: 500;
+  text-align: left;
+  background-image: linear-gradient(106.2deg, #963488 -12.33%, #FC6F32 50.28%, #FF4A59 114.17%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  z-index: 1;
+}
+
+.subtitle {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 400;
+  z-index: 1;
+}
+
+.btn {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 40px;
+  padding: 14px 32px 16px 32px;
+  cursor: pointer;
+  z-index: 1;
+}
+.btnNoBorder {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  background-color: transparent;
+  padding: 14px 24px 16px 24px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  border: solid 2px transparent;
+  z-index: 1;
+  &:hover {
+    background-color: rgba(87, 168, 255, 1);
+    border: solid 2px dodgerblue;
+  }
+}
+.btnLg {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 40px;
+  padding: 22px 48px 24px 48px;
+  cursor: pointer;
+  z-index: 1;
+}
+.btnNoBorderLg {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  background-color: transparent;
+  padding: 22px 32px 24px 32px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  border: solid 2px transparent;
+  z-index: 1;
+  &:hover {
+    background-color: rgba(87, 168, 255, 1);
+    border: solid 2px dodgerblue;
+  }
+}
+.bordered {
+  border-radius: 40px;
+  background-image: linear-gradient(106.2deg, #963488 -12.33%, #FC6F32 50.28%, #FF4A59 114.17%);
+  padding: 2px;
+  transition: background-image 0.3s ease;
+  z-index: 1;
+  &:hover {
+    background-image: linear-gradient(106.2deg, #FF4A59 -12.33%, #FC6F32 50.28%, #963488 114.17%);
+  }
+}
+.buttonBlock {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.badgeWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  z-index: 1;
+}
+.badgeBody {
+  width: 450px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 91px;
+  background-image: linear-gradient(105.65deg, rgba(150, 52, 136, 0.2) 0.15%, rgba(252, 111, 50, 0.2) 130.58%, rgba(255, 74, 89, 0.2) 263.64%);
+;
+}
+.badgeTitle {
+  font-family: Inter;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+}
+.badgeSubtitle {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+}
+
+.section2Title {
+  font-family: Clash Grotesk;
+  font-size: 48px;
+  font-weight: 500;
+  text-align: center;
+
+}
