@@ -16,18 +16,38 @@ import telegram from "../../public/telegram.svg"
 
 import {useState} from "react";
 import {animated, useInView, useSpring} from "@react-spring/web";
+import {useWindowSize} from "@/app/hooks/useWindowSize";
 
 export default function Home() {
+    const { width, height } = useWindowSize();
     const [scrollLocked, setScrollLocked] = useState(false);
     const [scrolled, setScrolled] = useState(false)
     const [ref, inView] = useInView({ once: true });
-    console.log(inView)
+    const media1920 = width > 1440
+    const media1440 = width <= 1440 && width >1024
+    const media1024 = width <= 1024 && width > 768
+    const media480 = width <= 480
+    console.log(media1440)
+    const titleSize = () => {
+        if (media1920) {
+            return scrolled? '120px': '128px'
+        }
+        if (media1440) {
+            return scrolled? '90px': '100px'
+        }
+        if (media1024) {
+            return scrolled? '50px': '60px'
+        }
+        if (media480) {
+            return scrolled? '40px': '50px'
+        }
+    }
 
     const titleAnimation = useSpring({
         backgroundImage: scrolled
             ? 'linear-gradient(106.2deg, #FFD6F9 -12.33%, #FFCBB4 50.28%, #FFBEC3 114.17%)'
             : 'linear-gradient(106.2deg, #963488 -12.33%, #FC6F32 50.28%, #FF4A59 114.17%)',
-        fontSize: scrolled? '120px': '128px',
+        fontSize: titleSize(),
         config: { duration: 500 },
     });
     const marginAnimation = useSpring({
@@ -216,11 +236,11 @@ export default function Home() {
                   <animated.div
                       style={section2IconsAnimation}
                       className={styles.section2images}>
-                      <Image src={solana} alt="solana"/>
-                      <Image src={arweave} alt="arweave"/>
-                      <Image src={bittensor} alt="bittensor"/>
-                      <Image src={red_icon} alt="red_icon"/>
-                      <Image src={telegram} alt="telegram"/>
+                          <Image src={solana} alt="solana" />
+                          <Image src={arweave} alt="arweave" />
+                          <Image src={bittensor} alt="bittensor"/>
+                          <Image src={red_icon} alt="red_icon"/>
+                          <Image src={telegram} alt="telegram"/>
                   </animated.div>
               </animated.div>
           </Element>
